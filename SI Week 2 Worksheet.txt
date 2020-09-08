@@ -1,0 +1,81 @@
+What do the following expressions evaluate to?
+1. 25 + 75 / 3 * 4 + "exp" + 35 / 5
+2. (25 + 75) / 4 * (2 + 8) / 5
+3. 38 % (6 / 4) + "mod" + ((10 % 3) * 8)
+
+A: Sam and J are friends who like to compete to see who's taller. One day, Sam
+   decides to boost their height by putting on stilts. After putting them on,
+   Sam grew from 151.3 cm to 170.8 cm. J sees Sam and decides to copy Sam by
+   putting on the same height stilts as Sam. If J was 151.8 cm before they put
+   the stilts on, how tall are they after putting the stilts on? Print out the
+   answer without doing any math by hand. 
+
+   Suddenly, Sam and J find themselves in Wonderland. They find two curious 
+   bottles, and they decide to try them (cuz why not?). After drinking the 
+   bottles, Sam shrinks to half their original height! J on the other hand 
+   grows an extra half of their original height. In both cases, their original 
+   height is the height including the stilts. Print out the friends' new and 
+   old heights. The format should be "Friend's-name has shrunk/grown from xxx 
+   cm to xxx cm after drinking the bottle.", where Friend's-name is either Sam 
+   or J, xxx is their height, and shrunk/grown is what happened to them.   
+
+
+B: Alec is an ASCII art programmer. She wants to print out the following 
+   hourglass:
+   *************
+   **         **
+     **     **
+	   *   *
+	    * *
+	   *   *
+     **     **
+   **         **
+   *************
+   Alec realizes that she can reduce repetition in her code. Write this program.
+   
+   Alec decides she wants to draw some more figures. Using the methods you 
+   wrote for the hourglass, draw a bottle below the hourglass
+   
+	    * *
+	    * *
+	   *   *
+     **     **
+   **         **
+   *************
+   
+   and an 8 below the bottle
+   
+   *************
+   *************
+   **         **
+   *************
+   **         **
+   *************
+   *************
+   
+   
+C: Lucien, Lorein, and Luke are identical triplets. They love to play pranks on
+   people by making them guess who's who. This time, they've invited their best
+   friend Lorcan to play a game with them. In a room, they've placed 5 chairs.
+   Lucien, Lorein, and Luke sit down in the 1st, 3rd, and 5th chairs 
+   respectively. Now they ask Lorcan to turn around as the triplets swap seats.
+   They swap chairs in such an order:
+   
+   Lucien and Lorein swap seats.
+   Luke moves to seat 2.
+   Lorein swaps seats with Luke.
+   Lucien moves to seat 5.
+   Lorein moves to seat 4.
+   Lucien and Lorein swap seats.
+   Luke moves to seat 3.
+   Lucien moves to seat 1.
+   Luke and Lorein swap seats.
+   
+   Now, Lorcan has extremely sharp hearing and so he can tell the difference
+   between each of the triplets and where they are. But he doesn't have very
+   good memory. Print out who's in what seat at each step above to help Lorcan
+   remember. After the last swap, Lorcan turns around and confidently points 
+   out which triplet was who. Print out what you think the triplet's reaction
+   is.
+   
+   
