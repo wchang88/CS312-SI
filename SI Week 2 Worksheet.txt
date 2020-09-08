@@ -17,7 +17,11 @@ A: Sam and J are friends who like to compete to see who's taller. One day, Sam
    height is the height including the stilts. Print out the friends' new and 
    old heights. The format should be "Friend's-name has shrunk/grown from xxx 
    cm to xxx cm after drinking the bottle.", where Friend's-name is either Sam 
-   or J, xxx is their height, and shrunk/grown is what happened to them.   
+   or J, xxx is their height, and shrunk/grown is what happened to them.
+
+   Then a third bottle appears. This bottle does something wacky! It divides
+   a person's height by a factor of 8, and then shrinks the person to the
+   remainder after division! Now print out what the friends' new heights are.
 
 
 B: Alec is an ASCII art programmer. She wants to print out the following 
