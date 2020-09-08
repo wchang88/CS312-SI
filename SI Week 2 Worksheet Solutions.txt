@@ -1,0 +1,166 @@
+Answers:
+1. "125exp7"
+2. 50
+3. "0mod8"
+
+A:
+public class Heights {
+	public static void main(String[] args) {
+		double stiltsHeight = 170.8 - 151.3;
+		double jHeight = 151.8 + stiltsHeight;
+		System.out.println(jHeight + " cm\n");
+		
+		double samHeight = 151.3 + stiltsHeight;
+		double samNewH = samHeight / 2;
+		double jNewH = jHeight * 1.5;
+		System.out.println("Sam shrunk from " + samHeight + " cm to " + samNewH
+							+ " cm after drinking the bottle.");
+		System.out.println("J grew from " + jHeight + " cm to " + jNewH
+							+ " cm after drinking the bottle.\n");
+		
+		double samThirdBottle = samNewH % 8;
+		double jThirdBottle = jNewH % 7;
+		System.out.println("Sam shrunk from " + samNewH + " cm to "
+							+ samThirdBottle
+							+ " cm after drinking the third bottle.");
+		System.out.println("J shrunk from " + jNewH + " cm to " + jThirdBottle
+							+ " cm after drinking the third bottle.");
+	}
+}
+
+The output should be:
+171.3 cm
+
+Sam shrunk from 170.8 cm to 85.4 cm after drinking the bottle.
+J grew from 171.3 cm to 256.95000000000005 cm after drinking the bottle.
+
+Sam shrunk from 85.4 cm to 5.400000000000006 cm after drinking the third bottle.
+J shrunk from 256.95000000000005 cm to 4.9500000000000455 cm after drinking the third bottle.
+
+B:
+public class Drawings {
+	public static void main(String[] args) {
+		hourglass();
+		System.out.println();
+		bottle();
+		System.out.println();
+		eight();
+	}
+	
+	public static void twelveStars() {
+		System.out.println("*************");
+	}
+	
+	public static void edge() {
+		System.out.println("**         **");
+	}
+	
+	public static void sides() {
+		System.out.println("  **     **  ");
+	}
+	
+	public static void neck() {
+		System.out.println("    *   *	 ");
+	}
+	
+	public static void center() {
+		System.out.println("     * *     ");
+	}
+	
+	public static void hourglass() {
+		twelveStars();
+		edge();
+		sides();
+		neck();
+		center();
+		neck();
+		sides();
+		edge();
+		twelveStars();
+	}
+	
+	public static void bottle() {
+		center();
+		center();
+		neck();
+		sides();
+		edge();
+		twelveStars();
+	}
+	
+	public static void eight() {
+		twelveStars();
+		twelveStars();
+		edge();
+		twelveStars();
+		edge();
+		twelveStars();
+		twelveStars();
+	}
+}
+
+A:
+public class Prank {
+	public static void main(String[] args) {
+		int lucien = 1;
+		int lorein = 3;
+		int luke = 5;
+		
+		int temp = lucien;
+		lucien = lorein;
+		lorein = temp;
+		System.out.println("Lucien: " + lucien + "\tLorein: " + lorein
+							+ "\tLuke: " + luke);
+							
+		luke = 2;
+		System.out.println("Lucien: " + lucien + "\tLorein: " + lorein
+							+ "\tLuke: " + luke);
+							
+		temp = luke;
+		luke = lorein;
+		lorein = temp;
+		System.out.println("Lucien: " + lucien + "\tLorein: " + lorein
+							+ "\tLuke: " + luke);
+							
+		lucien = 5;
+		System.out.println("Lucien: " + lucien + "\tLorein: " + lorein
+							+ "\tLuke: " + luke);
+							
+		lorein = 4;
+		System.out.println("Lucien: " + lucien + "\tLorein: " + lorein
+							+ "\tLuke: " + luke);
+							
+		temp = lucien;
+		lucien = lorein;
+		lorein = temp;
+		System.out.println("Lucien: " + lucien + "\tLorein: " + lorein
+							+ "\tLuke: " + luke);
+							
+		luke = 3;
+		System.out.println("Lucien: " + lucien + "\tLorein: " + lorein
+							+ "\tLuke: " + luke);
+							
+		lucien = 1;
+		System.out.println("Lucien: " + lucien + "\tLorein: " + lorein
+							+ "\tLuke: " + luke);
+							
+		temp = luke;
+		luke = lorein;
+		lorein = temp;
+		System.out.println("Lucien: " + lucien + "\tLorein: " + lorein
+							+ "\tLuke: " + luke);
+							
+		System.out.println("\nWow! You got us all right!");
+	}
+
+}
+
+The output should be:
+Lucien: 5	Lorein: 2	Luke: 1
+Lucien: 5	Lorein: 4	Luke: 1
+Lucien: 4	Lorein: 5	Luke: 1
+Lucien: 4	Lorein: 5	Luke: 3
+Lucien: 1	Lorein: 5	Luke: 3
+Lucien: 1	Lorein: 3	Luke: 5
+
+Wow! You got us all right!
