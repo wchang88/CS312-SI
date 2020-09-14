@@ -1,0 +1,34 @@
+SI Week 3 Worksheet
+Warm-up:
+How many tildas ("~") are printed when this code executes?
+
+	for (int i = 0; i < 10; i++) {
+		for (int j = i; j > 0; j--) {
+			for (int k = i; k < 10; k++) {
+				System.out.print("~");
+			}
+			System.out.println();
+		}
+	}
+
+A. 165  B. 220  C. 286  D. 275  E. 210
+
+Main Activity:
+(A)
+The famous Fibonacci numbers has a closely related sibling, the Lucas numbers.
+Like the Fibonacci numbers, each successive Lucas number can be found by adding
+the previous two terms together. The only difference between Fibonacci numbers
+and Lucas numbers are their starting points. For the Lucas sequence, the first
+number is 2 and the second number is 1. Using loops, find the next 10 Lucas 
+numbers. Print out the first 12 Lucas numbers (the first and second numbers
+plus the 10 you calculated) in a single line. You can find out more about the
+Lucas numbers at https://en.wikipedia.org/wiki/Lucas_number
+
+(B)
+Another interesting number is the hexagonal numbers. There's a Wikipedia page
+about these numbers - https://en.wikipedia.org/wiki/Hexagonal_number - if you're
+interested in learning more about them. For this problem, all you need to know
+is that the nth hexagonal number is calculated as n(2n - 1). Using loops, find
+the first 10 hexagonal numbers. Print each number on its own line in the format
+"For n = ..., the hexagonal number is ...", replacing each of the ... with the
+appropriate numbers.
