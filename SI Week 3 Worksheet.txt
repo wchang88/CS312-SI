@@ -1,6 +1,6 @@
 SI Week 3 Worksheet
 Warm-up:
-How many tildas ("~") are printed when this code executes?
+How many tildes ("~") are printed when this code executes?
 
 	for (int i = 0; i < 10; i++) {
 		for (int j = i; j > 0; j--) {
