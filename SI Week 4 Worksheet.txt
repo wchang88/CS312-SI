@@ -1,0 +1,70 @@
+SI Week 4 Worksheet
+Warm-up:
+	Write a program that converts between Celsius and Fahrenheit for any 
+	arbitrary temperature. Temperatures can be either be an integer or a double,
+	just like in every day life.
+
+	The following code skeleton has been provided for you. Do not change the 
+	function names, but you can add to each methods parameter list. Then 
+	complete the functions. Each of these methods should print out the original
+	temperature and the converted temperature, with each number followed by 
+	either 'F' or 'C' and separated with " = ".
+	
+	public class TemperatureConversion {
+		public static void main(String[] args) {
+		
+		}
+		
+		// converts Celsuis to Fahrenheit
+		public static void toFahrenheit() {
+			// TODO: complete the code for conversion
+		}
+		
+		// converts Fahrenheit to Celsius
+		public static void toCelsius() {
+			// TODO: complete the code for conversion
+		}
+	}
+	
+Main Activity:
+	(1) Using the two functions you just completed, for the next 10 temperatures
+		starting from -10C and increasing by increments of 5 degrees, convert
+		each temperature into Fahrenheit and print each of them out on a
+		separate line.
+		
+	(2) Alice is performing an experiment. She wants to calculate the
+		temperature of a pot that starts out as being x degrees F and warms up 
+		at a rate of y degrees F after t seconds. She wants to test rates of 
+		[5, 8, 11, 14, 17, 20] and starting temperatures of [0, 24.5, 49, 73.5].
+		For each rate and starting temperature, she wants to print out the
+		temperature IN CELSIUS of the pot after 1-5 seconds. The output should
+		be in the format below where x and y are the respective numbers:
+		
+		Starting temperature: xF
+		Rate: yF per second
+		<output from conversion>
+		
+		Rate: yF per second
+		<output from conversion>
+		.
+		.
+		.
+		
+		Starting temperature: xF
+		Rate: yF per second
+		.
+		.
+		.
+		
+	(3) A challenge for if you have time or want extra practice. Alice has
+		decided that her program is very useful, but she wants to be able to
+		use it for any starting temperature, for any rate, for any increment for
+		the previous two variables. In other words, Alice wants to be able to 
+		reuse the same code for different values without having to rewrite any 
+		part of it. In addition, Alice wants this new program to calculate in
+		batches of 5, meaning every time she runs this program with her values,
+		it should calculate the pot's temperature for 5 starting temperatures,
+		for 5 rates, and for 5 seconds (1-5). Turn your program from (2) into 
+		one that satisfies Alice's description.
+		
+		HINT: a new method with parameters is needed
