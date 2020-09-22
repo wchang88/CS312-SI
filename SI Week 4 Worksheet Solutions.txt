@@ -1,0 +1,255 @@
+SI Week 4 Worksheet Solution
+Warm-up:
+	public class TemperatureConversion {
+		public static void main(String[] args) {
+		
+		}
+		
+		// converts Celsuis to Fahrenheit
+		public static void toFahrenheit(double celsius) {
+			double fahrenheit = ((celsius * 9) / 5) + 32;
+			System.out.println(celsius + "C = " + fahrenheit + "F");
+		}
+		
+		// converts Fahrenheit to Celsius
+		public static void toCelsius(double fahrenheit) {
+			double celsius = ((fahrenheit - 32) * 5) / 9;
+			System.out.println(fahrenheit + "F = " + celsius + "C");
+		}
+	}
+	
+Main Activity:
+(1)	int temp = -10;
+	int increment = 5;
+	for (int i = 0; i < 10; i++) {
+		toFahrenheit(temp);
+		temp += increment;
+	}
+	
+	Expected output: 
+		-10.0C = 14.0F
+		-5.0C = 23.0F
+		0.0C = 32.0F
+		5.0C = 41.0F
+		10.0C = 50.0F
+		15.0C = 59.0F
+		20.0C = 68.0F
+		25.0C = 77.0F
+		30.0C = 86.0F
+		35.0C = 95.0F
+		
+(2) double startingTempInc = 24.5;
+	double rateInc = 3;
+	
+	double startingTemp = 0;
+	for (int i = 0; i < 4; i++) {
+		System.out.println("Starting temperature: " + startingTemp + "F");
+		double rate = 5;
+		for (int j = 0; j < 6; j++) {
+			System.out.println("Rate: " + rate + "F per second");
+			for (int t = 1; t <= 5; t++) {
+				double potTemp = startingTemp + (rate * t);
+				toCelsius(potTemp);
+			}
+			rate += rateInc;
+			System.out.println();
+		}
+		startingTemp += startingTempInc;
+	}
+
+
+	Expected output:
+		Starting temperature: 0.0F
+		Rate: 5.0F per second
+		5.0F = -15.0C
+		10.0F = -12.222222222222221C
+		15.0F = -9.444444444444445C
+		20.0F = -6.666666666666667C
+		25.0F = -3.888888888888889C
+
+		Rate: 8.0F per second
+		8.0F = -13.333333333333334C
+		16.0F = -8.88888888888889C
+		24.0F = -4.444444444444445C
+		32.0F = 0.0C
+		40.0F = 4.444444444444445C
+
+		Rate: 11.0F per second
+		11.0F = -11.666666666666666C
+		22.0F = -5.555555555555555C
+		33.0F = 0.5555555555555556C
+		44.0F = 6.666666666666667C
+		55.0F = 12.777777777777779C
+
+		Rate: 14.0F per second
+		14.0F = -10.0C
+		28.0F = -2.2222222222222223C
+		42.0F = 5.555555555555555C
+		56.0F = 13.333333333333334C
+		70.0F = 21.11111111111111C
+
+		Rate: 17.0F per second
+		17.0F = -8.333333333333334C
+		34.0F = 1.1111111111111112C
+		51.0F = 10.555555555555555C
+		68.0F = 20.0C
+		85.0F = 29.444444444444443C
+
+		Rate: 20.0F per second
+		20.0F = -6.666666666666667C
+		40.0F = 4.444444444444445C
+		60.0F = 15.555555555555555C
+		80.0F = 26.666666666666668C
+		100.0F = 37.77777777777778C
+
+		Starting temperature: 24.5F
+		Rate: 5.0F per second
+		29.5F = -1.3888888888888888C
+		34.5F = 1.3888888888888888C
+		39.5F = 4.166666666666667C
+		44.5F = 6.944444444444445C
+		49.5F = 9.722222222222221C
+
+		Rate: 8.0F per second
+		32.5F = 0.2777777777777778C
+		40.5F = 4.722222222222222C
+		48.5F = 9.166666666666666C
+		56.5F = 13.61111111111111C
+		64.5F = 18.055555555555557C
+
+		Rate: 11.0F per second
+		35.5F = 1.9444444444444444C
+		46.5F = 8.055555555555555C
+		57.5F = 14.166666666666666C
+		68.5F = 20.27777777777778C
+		79.5F = 26.38888888888889C
+
+		Rate: 14.0F per second
+		38.5F = 3.611111111111111C
+		52.5F = 11.38888888888889C
+		66.5F = 19.166666666666668C
+		80.5F = 26.944444444444443C
+		94.5F = 34.72222222222222C
+
+		Rate: 17.0F per second
+		41.5F = 5.277777777777778C
+		58.5F = 14.722222222222221C
+		75.5F = 24.166666666666668C
+		92.5F = 33.611111111111114C
+		109.5F = 43.05555555555556C
+
+		Rate: 20.0F per second
+		44.5F = 6.944444444444445C
+		64.5F = 18.055555555555557C
+		84.5F = 29.166666666666668C
+		104.5F = 40.27777777777778C
+		124.5F = 51.388888888888886C
+
+		Starting temperature: 49.0F
+		Rate: 5.0F per second
+		54.0F = 12.222222222222221C
+		59.0F = 15.0C
+		64.0F = 17.77777777777778C
+		69.0F = 20.555555555555557C
+		74.0F = 23.333333333333332C
+
+		Rate: 8.0F per second
+		57.0F = 13.88888888888889C
+		65.0F = 18.333333333333332C
+		73.0F = 22.77777777777778C
+		81.0F = 27.22222222222222C
+		89.0F = 31.666666666666668C
+
+		Rate: 11.0F per second
+		60.0F = 15.555555555555555C
+		71.0F = 21.666666666666668C
+		82.0F = 27.77777777777778C
+		93.0F = 33.888888888888886C
+		104.0F = 40.0C
+
+		Rate: 14.0F per second
+		63.0F = 17.22222222222222C
+		77.0F = 25.0C
+		91.0F = 32.77777777777778C
+		105.0F = 40.55555555555556C
+		119.0F = 48.333333333333336C
+
+		Rate: 17.0F per second
+		66.0F = 18.88888888888889C
+		83.0F = 28.333333333333332C
+		100.0F = 37.77777777777778C
+		117.0F = 47.22222222222222C
+		134.0F = 56.666666666666664C
+
+		Rate: 20.0F per second
+		69.0F = 20.555555555555557C
+		89.0F = 31.666666666666668C
+		109.0F = 42.77777777777778C
+		129.0F = 53.888888888888886C
+		149.0F = 65.0C
+
+		Starting temperature: 73.5F
+		Rate: 5.0F per second
+		78.5F = 25.833333333333332C
+		83.5F = 28.61111111111111C
+		88.5F = 31.38888888888889C
+		93.5F = 34.166666666666664C
+		98.5F = 36.94444444444444C
+
+		Rate: 8.0F per second
+		81.5F = 27.5C
+		89.5F = 31.944444444444443C
+		97.5F = 36.388888888888886C
+		105.5F = 40.833333333333336C
+		113.5F = 45.27777777777778C
+
+		Rate: 11.0F per second
+		84.5F = 29.166666666666668C
+		95.5F = 35.27777777777778C
+		106.5F = 41.388888888888886C
+		117.5F = 47.5C
+		128.5F = 53.611111111111114C
+
+		Rate: 14.0F per second
+		87.5F = 30.833333333333332C
+		101.5F = 38.611111111111114C
+		115.5F = 46.388888888888886C
+		129.5F = 54.166666666666664C
+		143.5F = 61.94444444444444C
+
+		Rate: 17.0F per second
+		90.5F = 32.5C
+		107.5F = 41.94444444444444C
+		124.5F = 51.388888888888886C
+		141.5F = 60.833333333333336C
+		158.5F = 70.27777777777777C
+
+		Rate: 20.0F per second
+		93.5F = 34.166666666666664C
+		113.5F = 45.27777777777778C
+		133.5F = 56.388888888888886C
+		153.5F = 67.5C
+		173.5F = 78.61111111111111C
+
+
+	
+(3) 
+	public static void calculatePotTemp(double startingTemp, double stIncrement,
+									    double r, double rInc) 
+	{
+		for (int i = 0; i < 5; i++) {
+			System.out.println("Starting temperature: " + startingTemp + "F");
+			double rate = r;
+			for (int j = 0; j < 5; j++) {
+				System.out.println("Rate: " + rate + "F per second");
+				for (int t = 1; t <= 5; t++) {
+					double potTemp = startingTemp + (rate * t);
+					toCelsius(potTemp);
+				}
+				rate += rInc;
+				System.out.println();
+			}
+			startingTemp += stIncrement;
+		}
+	}
+	
