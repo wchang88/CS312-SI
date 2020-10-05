@@ -1,0 +1,47 @@
+Week 6 SI Worksheet
+
+Warmup:
+	Given the following code, what is the result of each expression? Explain
+	the reasoning for your answer.
+		String s1 = "hello";
+		String s2 = "hello";
+		String s3 = s1;
+		String s4 = "Hello";
+		
+	a) s1 == s2
+	b) s1 == s3
+	c) s2 == s3
+	d) s1.equals(s2)
+	e) s2.equals(s3)
+	f) s4.equals(s3)
+	
+Main Activity:
+	Given a user-inputted String s, print out some statistics for s. The 
+	statistics we want to calculate are as follows:
+		- the length of s
+		- the first character in s
+		- the last character in s
+		- the middle character in s
+		- two substrings of s divided around the middle character
+		- if s contains numbers only
+		- if s contains letters only
+		- if s contains at least one letter and one number
+		- if the substring of the first middle characters contains only numbers
+		- if the substring of the first middle characters contains only letters
+		- if the substring of the first middle characters contains a mix of 
+		  letter and numbers
+	
+	You should print each statistic on its own line and with ample description 
+	of what each statistic is (ex: for length, you can print 'The length of 
+	the string "<insert s here>" is <length of string>').
+	
+	***All of these can be solved with the String methods we covered in lecture.
+	If you need a refresher on String methods, refer to Topic 13's slides 11 and
+	19.
+		
+	***Try to apply a procedural design to this program. If you don't remember
+	what procedural design is, check Topic 13's slide 6 for a refresher.
+	
+	***Some of these statistics depend on other statistics. However, each
+	statistic should be calculated EXACTLY ONCE. To do this, you will need to
+	employ techniques learned in previous weeks.
