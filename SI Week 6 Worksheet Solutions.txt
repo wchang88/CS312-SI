@@ -1,0 +1,104 @@
+Week 6 SI Worksheet Solutions
+
+Warmup:
+	a) false, the expression compares s1 and s2 by reference, and s1 and s2 have
+	   different references (addresses); in other words, s1 and s2 point to 
+	   two different instances of the string "hello" and s1 == s2 is comparing
+	   the addresses of the two instances, not the actual string itself
+	b) true, s3 stores the same address as s1, therefore s1 == s3 returns true
+	c) false, same as (a)
+	d) true, equals() compares what's inside the string
+	e) true, same as (d)
+	f) false, "Hello" and "hello" do not contain the same characters
+	
+Main Activity:
+	public static final String LETTERS = "abcdefghijklmnopqrstuvwxyz";
+	public static final String NUMBERS = "0123456789";
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		int middle = characterStats(s);
+		String firstSubstring = substrings(s, middle);
+		stringContains(s);
+		substringContains(firstSubstring);
+	}
+	
+	public static int characterStats(String s) {
+		int length = s.length();
+		char first = s.charAt(0);
+		int mid = length / 2;
+		char middle = s.charAt(mid);
+		char last = s.charAt(length - 1);
+		System.out.println("The length of string \"" + s + "\" is " + length);
+		System.out.println("The first character is '" + first + "'");
+		System.out.println("The middle character is '" + middle + "'");
+		System.out.println("The last character is '" + last + "'");
+		return mid;
+	}
+	
+	public static String substrings(String s, int middle) {
+		String firstSubstring = s.substring(0, middle);
+		String secondSubstring = s.substring(middle);
+		System.out.println("The first substring is \"" + firstSubstring + "\"");
+		System.out.println("The second substring is \"" + secondSubstring + "\"");
+		return firstSubstring;
+	}
+	
+	public static void stringContains(String s) {
+		s = s.toLowerCase();
+		onlyLetters(s, "string");
+		onlyNumbers(s, "string");
+		mixedLettersAndNums(s, "string");
+	}
+	
+	public static void substringContains(String sub) {
+		sub = sub.toLowerCase();
+		onlyLetters(sub, "substring");
+		onlyNumbers(sub, "substring");
+		mixedLettersAndNums(sub, "substring");
+	}
+	
+	public static void onlyLetters(String s, String output) {
+		int letters = 0;
+		for (int i = 0; i < s.length(); i++) {
+			String ch = s.charAt(i) + "";
+			if (LETTERS.contains(ch))
+				letters++;
+		}
+		if (letters == s.length())
+			System.out.println("The " + output + " only contains letters");
+		else
+			System.out.println("The " + output + " contains non-letters");
+	}
+	
+	public static void onlyNumbers(String s, String output) {
+		int numbers = 0;
+		for (int i = 0; i < s.length(); i++) {
+			String ch = s.charAt(i) + "";
+			if (NUMBERS.contains(ch))
+				numbers++;
+		}
+		if (numbers == s.length())
+			System.out.println("The " + output + " only contains numbers");
+		else
+			System.out.println("The " + output + " contains non-numbers");
+	}
+	
+	public static void mixedLettersAndNums(String s, String output) {
+		int numbers = 0;
+		int letters = 0;
+		for (int i = 0; i < s.length(); i++) {
+			String ch = s.charAt(i) + "";
+			if (NUMBERS.contains(ch))
+				numbers++;
+			else if (LETTERS.contains(ch))
+				letters++;
+		}
+		if (numbers != 0 && letters != 0)
+			System.out.println("The " + output + " \"" + s + "\" contains both "
+							   + "letters and numbers");
+		else
+			System.out.println("The " + output + " \"" + s + "\" doesn't "
+							   + "contain a mix of letters and numbers");
+	}
