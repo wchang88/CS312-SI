@@ -1,0 +1,112 @@
+SI Week 7 Extra Practice
+
+Instructions: Simplify these into boolean zen! The goal is not only to simplify
+			  the code, but also to make it easier to understand. Remember not
+			  to oversimplify. Sometimes you will need extra variables to make
+			  your code more readable. Other times you will not. Not every
+			  problem will simplify to one line.
+
+1.	// return true is number is a multiple of either 3 or 5, but not both
+	public static boolean multipleOfThreeXorFive(int number) {
+		if (number % 3 == 0) {
+			if (number % 5 == 0) {
+				return false;
+			} else {
+				return true;
+			}
+		} else if (number % 5 == 0) {
+			if (number % 3 == 0) {
+				return false;
+			} else {
+				return true;
+			}
+		} else {
+			return false;
+		}
+	}
+	
+2.	// this is a method header for a method that will return true if the user 
+	// is authenticated
+	public static boolean authenticatedUser(String loginInfo)
+	
+	// return true if authenticated user and admin user
+	public static boolean administrator(boolean admin, String loginInfo) {
+		boolean adminUser = false;
+		if (admin == true) {
+			adminUser = true;
+		} else {
+			adminUser = false;
+		}
+		
+		boolean authenticated = authenticatedUser(loginInfo);
+		if (authenticated == true) {
+			adminUser = true;
+		} else {
+			adminUser = false;
+		}
+		
+		return adminUser;
+	}
+	
+3. 	// this is a method header for a method that will return the sum of a and b
+	public static int sumOfPair(int a, int b)
+	
+	// return true if all pairs have a positive sum (strictly > 0)
+	public static boolean positiveSums(int x, int y, int z) {
+		int sumPair1 = sumOfPair(x, y);
+		int sumPair2 = sumOfPair(x, z);
+		int sumPair3 = sumOfPair(y, z);
+		
+		if (sumPair1 > 0) {
+			if (sumPair2 > 0) {
+				if (sumPair3 > 0) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+	
+4.  // this is a method header for a method that will return the reverse of a
+	// 3 digit number; ex: reverseNumber(123)->321
+	public static int reverseNumber(int x)
+	
+	// return true if the reverse of the sum of 3 integers is also a three
+	// digit number; the sum of 3 integers won't necessarily be 3 digits
+	public static boolean positiveSums(int x, int y, int z) {
+		if (x < 100 || x > 999) {
+			return false;
+		}
+		
+		if (y < 100 || y > 999) {
+			return false;
+		}
+		
+		if (z < 100 || z > 999) {
+			return false;
+		}
+		
+		int sum = x + y + z;
+		if (sum < 100 || sum > 999) {
+			return false;
+		}
+		
+		int reverse = reverseNumber(sum);
+		if (reverseNumber >= 100 && reverseNumber <= 999) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+Instructions: Negate the following expressions using De Morgan's law
+
+5. (x || y || !z)
+6. (!(x && y) || (x || y) && !z)
+7. !!!x && !!y
+8. x && (!y && (!z && (y || !x)))

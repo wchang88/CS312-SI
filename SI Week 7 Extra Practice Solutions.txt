@@ -1,0 +1,84 @@
+SI Week 7 Extra Practice Solutions
+
+1.	// this solution is preferred because it only calculates multOf3 and multOf5
+	// once; just saves some calculations and time
+	public static boolean multipleOfThreeXorFive(int number) {
+		boolean multOf3 = number % 3 == 0;
+		boolean multOf5 = number % 5 == 0;
+		
+		return (multOf3 || multOf5) && !(multOf3 && multOf5);
+	}
+
+	OR
+	
+	public static boolean multipleOfThreeXorFive(int number) {
+		return (number % 3 == 0 || number % 5 == 0) 
+				&& !(number % 3 == 0 && number % 5 == 0);
+	}
+	
+2.	public static boolean administrator(boolean admin, String loginInfo) {
+		return admin && authenticatedUser(loginInfo);
+	}
+	
+3. 	// this solution is preferred because it's easier to read
+	public static boolean positiveSums(int x, int y, int z) {
+		int sumPair1 = sumOfPair(x, y);
+		int sumPair2 = sumOfPair(x, z);
+		int sumPair3 = sumOfPair(y, z);
+		
+		return sumPair1 > 0 && sumPair2 > 0 && sumPair3 > 0;
+	}
+	
+	OR
+	
+	public static boolean positiveSums(int x, int y, int z) {
+		return sumOfPair(x, y) > 0 && sumOfPair(x, z) > 0 
+				&& sumOfPair(y, z) > 0;
+	}
+	
+4.  // this solution is preferred because it calculates sum and reverseNumber
+	// only once; saves time, memory, and calculations; plus easier to read
+	public static boolean positiveSums(int x, int y, int z) {
+		int sum = x + y + z;
+		if (sum < 100 || sum > 999) {
+			return false;
+		} else {
+			int reverse = reverseNumber(sum);
+			return reverse >= 100 && reverse <= 999;
+		}
+	}
+	
+	OR
+	
+	public static boolean positiveSums(int x, int y, int z) {
+		return ((x + y + z) >= 100) && ((x + y + z) <= 999) 
+				&& reverseNumber(x + y + z) >= 100 
+				&& reverseNumber(x + y + z) <= 999;
+	}
+	
+5. !(x || y || !z)
+	=> (!(x) && !(y) && !(!z))
+	=> (!x && !y && z)
+	
+6. !(!(x && y) || (x || y) && !z)
+	=> !((!x || !y) || (x || y) && !z)
+	=> (!(!x || !y) && !(x || y) || !(!z))
+	=> ((x && y) && (!x && !y) || z)
+	
+	OR
+	
+	!(!(x && y) || (x || y) && !z)
+	=> (!(!(x && y)) && !(x || y) || !(!z))
+	=> ((x && y) && (!x && !y) || z)
+	
+7. !(!!!x && !!y)
+	=> (!(!!!x) || !(!!y))
+	=> (!(!x) || !(y))
+	=> (x || !y)
+
+8. !(x && (!y && (!z && (y || !x))))
+	=> (!(x) || !(!y && (!z && (y || !x))))
+	=> (!(x) || (!(!y) || !(!z && (y || !x))))
+	=> (!(x) || (!(!y) || (!(!z)|| !(y || !x))))
+	=> (!(x) || (!(!y) || (!(!z)|| (!(y) && !(!x)))))
+	=> (!x || (y || (z|| (!y && x))))
