@@ -22,7 +22,7 @@ Problem 1:
 	
 		Hilda=--=Riegan=--=1909=--=May=--=31=--=1989=--=December=--=31
 		Marianne=--=Edmund=--=1980=--=August=--=12=--=0000=--=Alive=--=00
-		Felix=--=Hugo=--=1880=--=June=--=21=--=1935=--=July=--=1
+		Felix=--=Hugo=--=900=--=June=--=21=--=0000=--=July=--=1
 		
 	The entire file follows this format. The data is ordered as such: first
 	name, last name, year of birth, month of birth, day of birth, year of 
