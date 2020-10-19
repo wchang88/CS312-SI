@@ -6,7 +6,7 @@ Problem 1:
 	data from the file and today they decided that you absolutely MUST use
 	token-based processing. They will not accept anything else. You open the
 	file and notice something peculiar about the file: the data is separated by
-	the sequence "+--+"! Why? Who knows? You find it strange, but alas you gotta
+	the sequence "=--="! Why? Who knows? You find it strange, but alas you gotta
 	work with what you're given.
 	
 	The first part of your job is to set up a Scanner that will fulfil the 
@@ -20,9 +20,9 @@ Problem 1:
 	a more careful and detailed look at the file. You find that the first three
 	lines of the file look like this:
 	
-		Hilda+--+Riegan+--+1909+--+May+--+31+--+1989+--+December+--+31
-		Marianne+--+Edmund+--+1980+--+August+--+12+--+0000+--+Alive+--+00
-		Felix+--+Hugo+--+1880+--+June+--+21+--+1935+--+July+--+1
+		Hilda=--=Riegan=--=1909=--=May=--=31=--=1989=--=December=--=31
+		Marianne=--=Edmund=--=1980=--=August=--=12=--=0000=--=Alive=--=00
+		Felix=--=Hugo=--=1880=--=June=--=21=--=1935=--=July=--=1
 		
 	The entire file follows this format. The data is ordered as such: first
 	name, last name, year of birth, month of birth, day of birth, year of 
