@@ -1,0 +1,77 @@
+SI Week 8 Worksheet
+
+Problem 1:
+	You are given a file by your boss. The file is an ordinary text file called
+	"data.txt". Your boss is being very picky about the way you are reading in
+	data from the file and today they decided that you absolutely MUST use
+	token-based processing. They will not accept anything else. You open the
+	file and notice something peculiar about the file: the data is separated by
+	the sequence "+--+"! Why? Who knows? You find it strange, but alas you gotta
+	work with what you're given.
+	
+	The first part of your job is to set up a Scanner that will fulfil the 
+	conditions set forth by your boss and allow you to read in the data. Please
+	set up the Scanner before you move on.
+	
+	// Set up your Scanner here. Make sure that your Scanner will do
+	// token-based processing and that the delimiter is correctly set
+	
+	The next part of your job is now to perform operations on the file. You take
+	a more careful and detailed look at the file. You find that the first three
+	lines of the file look like this:
+	
+		Hilda+--+Riegan+--+1909+--+May+--+31+--+1989+--+December+--+31
+		Marianne+--+Edmund+--+1980+--+August+--+12+--+0000+--+Alive+--+00
+		Felix+--+Hugo+--+1880+--+June+--+21+--+1935+--+July+--+1
+		
+	The entire file follows this format. The data is ordered as such: first
+	name, last name, year of birth, month of birth, day of birth, year of 
+	death, month of death, day of death. Your boss wants you to write a program
+	that will print out the age of only the people who have passed away. The 
+	output format is as such:
+	
+		<last name>, <first name> passed away at the age of <age> years old
+		
+	After you finish this program and submit it to your boss, your boss asks
+	you for feedback. What two pieces of feedback would you give him?
+		
+Problem 2:
+	Your friend asks you for help to set up a Scanner that will take user input.
+	They tell you that they're writing a program that will ask the user for
+	various pieces of information in order to do something. They have most of 
+	the code already written, but they just don't know how to set up the
+	Scanner. Can you set it up for them?
+	
+	// Set up your Scanner here
+	
+	As you take a look at your friend's code, you notice that not only is their
+	code very messy, but there are a bunch of potential bugs in the code! You
+	bring this up to your friend, but they just stare back at you in confusion.
+	So you decide to show him an example. Their code outputs something like
+	below to the user's screen:
+	
+		Input first name: <user input here>
+		Input last name: <user input here>
+		Input age: <user input here>
+		Input occupation: <user input here>
+		Input yearly income: <user input here>
+		
+		Your name is <first name> <last name>. You are <age> years old. You
+		work in the <occupation> field and you earn $<income> a year.
+		
+	Their code calls Scanner methods in this order:
+		first_name = sc.next();
+		last_name = sc.nextLine();
+		age = sc.nextInt();
+		occupation = sc.nextLine();
+		income = sc.nextDouble();
+		
+	You show him an example where the inputs are "Mary Sue", "Jones", "19", 
+	"freelance writer", "90000", in that order. Where did your friend go wrong?
+	What do you get if you tried to run the code as your friend had it? How
+	would you fix it?
+	
+Extra Challenge!!
+	Count how many commas appear in this file using a Scanner and print the
+	number out. Good luck :,)
+	
