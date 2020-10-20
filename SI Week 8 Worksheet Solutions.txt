@@ -1,0 +1,69 @@
+SI Week 8 Worksheet Solutions
+
+Problem 1:
+	Scanner sc = new Scanner(new File("data.txt"));
+	sc.useDelimiter("=--=");
+	
+	while (sc.hasNext()) {
+		String firstName = sc.next();
+		String lastName = sc.next();
+		int birthYear = sc.nextInt();
+		sc.next();
+		sc.nextInt();
+		int deathYear = sc.nextInt();
+		String deathMonth = sc.next();
+		sc.nextLine(); // **see below for explanation**
+		
+		if (!deathMonth.equals("Alive")) {
+			System.out.println(lastName + ", " + firstName + " passed away " +
+							"at the age of " + Math.abs(deathYear - birthYear) + 
+							" years old");
+	}
+	
+	** need to use nextLine() over just next() because we overwrote delimiter
+	   and so whitespace is now not ignored, and so in first while loop 
+	   iteration, if next() used, the Scanner will return "31\nMarianne". On
+	   the next iteration, firstName = next() will read "Edmund", 
+	   lastName = next() will read "1980", and birthYear = nextInt() will try 
+	   to read "May" as an int, resulting in an InputMismatchException. We don't
+	   want to accidently read in the first token on the next line, so we need
+	   to use nextLine() to read up until the new line and place the cursor
+	   at the start of the next line **
+	
+Problem 2:
+	Scanner sc = new Scanner(System.in);
+	
+	If you tried to run the code, you'd get an InputMismatchException when 
+	age = sc.nextInt(); is reached. This is because the first two calls, 
+	sc.next() and sc.nextLine() will only consume "Mary Sue\n". After the user
+	types in their input, Scanner is basically sitting over something that
+	looks like "Mary Sue\nJones\n19\nfreelance writer\n90000\n". The first two
+	method calls on Scanner will consume essentially the first line. That
+	leaves the Scanner sitting right before the "J" and when the next Scanner
+	method is called, Scanner will try to read in an int but see that the next
+	token is characters and throw an InputMismatchException error.
+	
+	Another error that might pop up is income = sc.nextDouble() if your friend
+	forgot to add sc.nextLine() after getting the age. This is because after
+	reading the int, the Scanner cursor is resting right before the newline,
+	hence occupation = sc.nextLine() will return an empty string and the cursor
+	will be resting at the start of the "freelance writer" and that is 
+	incompatiable with sc.nextDouble().
+	
+	One way to fix it is:
+		first_name = sc.nextLine();
+		last_name = sc.nextLine();
+		age = sc.nextInt();
+		sc.nextLine();
+		occupation = sc.nextLine();
+		income = sc.nextDouble();
+		
+Extra Challenge:
+	Scanner sc = new Scanner(new File("SI-Week-8-Worksheet.txt");
+	int numCommas = 0;
+	while (sc.hasNext()) {
+		String token = sc.next();
+		if (token.contains(","))
+			numCommas++;
+	}
+	System.out.println("This file has " + numCommas + " commas.");
