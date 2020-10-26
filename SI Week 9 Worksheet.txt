@@ -6,7 +6,7 @@ Warm-up:
 		int n = start;
 		// POINT A
 		
-		while (n < 1) {
+		while (n > 1) {
 			// POINT B
 			iterations++;
 			if (n % 2 == 0) {
