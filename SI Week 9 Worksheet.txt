@@ -1,0 +1,158 @@
+SI Week 9 Worksheet
+
+Warm-up:
+	public static int collatz(int start) {
+		int iterations = 0;
+		int n = start;
+		// POINT A
+		
+		while (n < 1) {
+			// POINT B
+			iterations++;
+			if (n % 2 == 0) {
+				// POINT C
+				n = n / 2;
+			} else {
+				// POINT D
+				n = n * 3 - 1;
+			}
+		}
+		// POINT E
+		
+		return iterations;
+	}
+	
+	For each assertion state if it is ALWAYS, NEVER, or SOMETIMES true
+	at the specified points in the code.
+	
+				n == 1		iterations >= 0		n % 2 == 1
+	POINT A
+	POINT B
+	POINT C
+	POINT D
+	POINT E
+	
+	----------------------------------------------------------------------------
+	
+	public static double accuracy(int trials) {
+		int inRange = 0;
+		int outRange = 0;
+		int onPoint = 0;
+		Random r = new Random();
+		double average = 0.0
+		int tests = 0;
+		// POINT A
+		
+		while (average < 25) {
+			// POINT B
+			int rand = r.nextInt(51);
+			average = (average * tests + rand) / (tests + 1)
+			tests++;
+			// POINT C
+			if (rand < 50)
+				inRange++;
+			else if (rand > 50)
+				outRange++;
+			else
+				onPoint++;
+			// POINT D
+		}
+		
+		if (tests == trials)
+			// POINT E
+			return (double) (inRange + onPoint) / tests;
+		else
+			// POINT F
+			return (double) outRange / tests;
+	}
+	
+	For each assertion state if it is ALWAYS, NEVER, or SOMETIMES true
+	at the specified points in the code.
+	
+				average < 25	tests == trials	
+	POINT A
+	POINT B
+	POINT C
+	POINT D
+	POINT E	
+	POINT F
+	
+Main Activity:
+	Problem A: You are given the task of tallying guests for a party. The
+			   organizers of the party have supplied you with a data document
+			   titled "guests.txt". The format of the data file is as follows:
+			 
+			 <Name of venue>
+			 <Number of guests>
+			 <Guest name>
+			 .
+			 .
+			 .
+			 
+			 For a more concrete example, here is a possible version of
+			 "guests.txt":
+			 
+			 Sunset Park
+			 15
+			 Jones, Mary
+			 Joseph Christopher
+			 Ia, Rho Si
+			 Eileen Sarah Anderson
+			 .
+			 .
+			 .
+	
+	*** Brainstorm first, then code. The format of guest names might be tricky
+	    to handle, but the logic isn't hard. If you need a hint, try to identify
+	    patterns in the way the names are handled. ***
+			 
+	Version 1:
+		The organizers of the party want you to tally up the guests by last
+		name. They want a count of how many people have have a last name that
+		starts a certain letter. For simplicity's sake, assume the guests' last
+		names are only one word long. Write a function that takes in a Scanner
+		already connected to the file and returns an int array with the tally
+		of guests' based on last names. The function shall be named tallyGuests.
+	
+	Version 2:
+		The organizers of the party want you to tally up the guests by first
+		nbame. They want a count of how many people have a first name that 
+		starts with a certain letter. Guests can have middle names, but they
+		aren't important. Write a function that takes in a Scanner already
+		connected to the file and returns an int array with the tally of guests'
+		based on first names. The function shall be named tallyGuests.
+		
+	----------------------------------------------------------------------------
+		
+	Problem B: Now that you've tallied up the guests for the party organizers,
+			   the organizers are interested in know how many clumps there are
+			   in their guest list. A clump is defined as a series of 2+
+			   adjacent elements in an array with the same value. In this case,
+			   a clump is a grouping of initial letters with the same number of
+			   people in the group. 
+			 
+			   For example, say we consider the first six letters of the 
+			   alphabet. The corresponding array looks like this: 
+			   [1, 2, 2, 3, 3, 4], where array[0] represents the number of 
+			   people with first/last names that start with an 'a', array[1] 
+			   'b', and so on. There are two clumps in this array, 'b' & 'c' 
+			   with values of 2 and 'd' & 'e' with values of 4.
+			 
+	*** The two versions below are essentially the same logic. Don't get stuck
+	    on if the array is for counts of first name letters or last name
+	    letters. Your solution for one version should work for the other version
+	    without having to change anything.***
+			 
+	Version 1:
+		Write a function that takes in an array filled with the counts of guests
+		whose last names start with a specific letter. Essentially, this is the
+		array from above that you've created and returned. This function will
+		return the number of clumps as defined above. The function shall be
+		named countClumps.
+		
+	Version 2:
+		Write a function that takes in an array filled with the counts of guests
+		whose first names start with a specific letter. Essentially, this is the
+		array from above that you've created and returned. This function will
+		return the number of clumps as defined above. The function shall be 
+		names countClumps.
