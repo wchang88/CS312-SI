@@ -1,0 +1,112 @@
+SI Week 9 Worksheet Solutions:
+
+Warm-up:
+				n == 1		iterations >= 0		n % 2 == 1
+	POINT A		SOMETIMES	ALWAYS				SOMETIMES
+	POINT B		NEVER		ALWAYS				SOMETIMES
+	POINT C		NEVER		ALWAYS				NEVER
+	POINT D		NEVER		ALWAYS				ALWAYS
+	POINT E		SOMETIMES	ALWAYS				SOMETIMES
+	
+				average < 25	tests == trials	
+	POINT A		ALWAYS			SOMETIMES
+	POINT B		ALWAYS			SOMETIMES
+	POINT C		SOMETIMES		SOMETIMES
+	POINT D		SOMETIMES		SOMETIMES
+	POINT E		NEVER			ALWAYS	
+	POINT F		NEVER			NEVER
+	
+Main Activity:
+	Problem A:
+		Version 1:
+			public static int[] tallyGuests(Scanner sc) {
+				sc.nextLine();
+				int numGuests = sc.nextInt();
+				sc.nextLine();
+				
+				int[] guestsByLastName = new int[26];
+				for (int i = 0; i < numGuests; i++) {
+					String guestName = sc.nextLine();
+					char initialLetter;
+					
+					if (guestName.contains(",")) {
+						// guestName in the form <last, first>
+						initialLetter = guestName.charAt(0);
+					} else {
+						// guestName in the form <first last>
+						Scanner nameScanner = new Scanner(guestName);
+						String name = " ";
+						while (nameScanner.hasNext()) {
+							name = nameScanner.next();
+						}
+						initialLetter = name.charAt(0);
+					}
+					
+					// get the 0-based index of a letter
+					int index = initialLetter - 'A';
+					guestsByLastName[index]++;
+				}
+				
+				return guestsByLastName;
+			}
+			
+		Version 2:
+			public static int[] tallyGuests(Scanner sc) {
+				sc.nextLine();
+				int numGuests = sc.nextInt();
+				sc.nextLine();
+				
+				int[] guestsByFirstName = new int[26];
+				for (int i = 0; i < numGuests; i++) {
+					String guestName = sc.nextLine();
+					char initialLetter;
+					
+					if (guestName.contains(",")) {
+						// guestName in the form <last, first>
+						Scanner nameScanner = new Scanner(guestName);
+						nameScanner.next();
+						String name = nameScanner.next();
+						initialLetter = name.charAt(0);
+					} else {
+						// guestName in the form <first last>
+						initialLetter = guestName.charAt(0);
+					}
+					
+					// get the 0-based index of the letter
+					int index = initialLetter - 'A';
+					guestsByFirstName[index]++;
+				}
+				
+				return guestsByFirstName;
+			}
+			
+	Problem B:
+		public static int countClumps(int[] guestCounts) {
+			int clumps = 0;
+			// start off clumpValue with number of guests with 'a'-leading names
+			int clumpValue = guestCounts[0];
+			// one group in this clump with value of clumpValue
+			int inClump = 1;
+			
+			// loop through all letters starting with 'b'
+			for (int i = 1; i < guestCounts.length; i++) {
+				int currentValue = guestCounts[i];
+				if (currentValue == clumpValue) {
+					// if the values match, found another in the clump
+					inClump++;
+				} else {
+					// else, determine if we have a clump and reset to start
+					// looking for the next clump
+					if (inClump > 1)
+						clumps++;
+					inClump = 1;
+					clumpValue = currentValue;
+				}
+			}
+			
+			// check if we finished with a clump or not
+			if (inClump > 1)
+				clumps++;
+			
+			return clumps;
+		}
