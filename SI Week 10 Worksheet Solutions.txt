@@ -1,0 +1,120 @@
+SI Week 10 Worksheet Solutions
+
+Warm-up:
+	Problem 1:
+		for (int row = 0; row < matrix.length; row++) {
+			for (int col = 0; col < matrix[0].length; col++) {
+			}
+		}
+		
+	Problem 2:
+		for (int col = 0; col < matrix[0].length; col++) {
+			for (int row = 0; row < matrix.length; row++) {
+			}
+		}
+		
+	Problem 3:
+		for (int row = 0; row < matrix.length; row++) {
+			for (int col = 0; col < matris[row].length; col++) {
+			}
+		}
+		
+	Problem 4:
+		Any of the following:
+			matrix[1].length
+			matrix[2].length
+			matrix[3].length
+			.
+			. 
+			.
+			matrix[N - 1].length
+			
+	Problem 5:
+		SOMETIMES. We don't know without taking a look at matrix. It could be
+		that row 0 and row N - 1 have the same number of columns, but it could
+		also be that they have a different number of columns because the 2D
+		array is ragged.
+
+Main Activity:
+	Problem 1:
+		public static boolean isLowerTriangular(int[][] matrix) {
+			if (matrix.length != matrix[0].length)
+				return false;
+		
+			for (int row = 0; row < matrix.length; row++) {
+				for (int col = row + 1; col <= matrix[0].length; col++) [
+					if (matrix[row][col] != 0)
+						return false;
+				}
+			}
+			
+			return true;
+		}
+			
+	Problem 2:
+		public static boolean isLowerTriangular(int[][] matrix) {
+			if (matrix.length != matrix[0].length)
+				return false;
+				
+			for (int row = 0; row < matrix.length; row++) {
+				for (int col = 0; col < row; col++) [
+					if (matrix[row][col] != 0)
+						return false;
+				}
+			}
+			
+			return true;
+		}
+		
+	Problem 3:
+		public static boolean isStrictlyLower(int[][] matrix) {
+			if (!isLowerTriangular(matrix)) {
+				return false;
+			} else {
+				for (int i = 0; i < matrix.length; i++) {
+					if (matrix[i][i] != 0)
+						return false;
+				}
+				
+				return true;
+			}
+		}
+			
+	Problem 4:
+		public static boolean isStrictlyUpper(int[][] matrix) {
+			if (!isUpperTriangular(matrix)) {
+				return false;
+			} else {
+				for (int i = 0; i < matrix.length; i++) {
+					if (matrix[i][i] != 0)
+						return false;
+				}
+				
+				return true;
+			}
+		}
+		
+	Problem 5:
+		public static boolean isSymmetrical(int[][] matrix) {
+			for (int row = 0; row < matrix.length; row++) {
+				for (int col = row; col < matrix[0].length; col++) {
+					if (matrix[row][col] != matrix[col][row])
+						return false;
+				}
+			}
+			
+			return true;
+		}
+		
+	Problem 6:
+		public static int[][] transposeMatrix(int[][] matrix) {
+			int[][] transposed = new int[matrix.length][matrix[0].length];
+			
+			for (int row = 0; row < matrix.length; row++) {
+				for (int col = 0; col < matrix[0].length; col++) {
+					transposed[col][row] = matrix[row][col];
+				}
+			}
+			
+			return transposed
+		}
