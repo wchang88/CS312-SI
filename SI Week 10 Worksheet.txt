@@ -12,8 +12,8 @@ Warm-up:
 		body of the for loop(s), just the for loop(s).
 		
 	Problem 3:
-		2D arrays can be jagged, meaning each row does not have the same number
-		of columns. For example, this is a jagged array:
+		2D arrays can be ragged, meaning each row does not have the same number
+		of columns. For example, this is a ragged array:
 		
 			1 2 3 4
 			5 6
@@ -21,7 +21,7 @@ Warm-up:
 			0 1 2 3 4 5
 			6 7 8 9
 		
-		Write the for loop(s) that will traverse a jagged array.
+		Write the for loop(s) that will traverse a ragged array.
 		
 	Problem 4:
 		Assume you have a matrix that is rectangular, that is NxM or NxN. Write
@@ -30,7 +30,7 @@ Warm-up:
 			matrix[0].length
 			
 	Problem 5:
-		If an array is jagged, that is each row does not have the same number
+		If an array is ragged, that is each row does not have the same number
 		of columns, is the following equal? ALWAYS, SOMETIMES, NEVER
 			
 			matrix[0].length == matrix[N].length
