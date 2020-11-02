@@ -33,7 +33,7 @@ Warm-up:
 		If an array is ragged, that is each row does not have the same number
 		of columns, is the following equal? ALWAYS, SOMETIMES, NEVER
 			
-			matrix[0].length == matrix[N].length
+			matrix[0].length == matrix[N - 1].length
 
 Main Activity:
 	Problem 1:
