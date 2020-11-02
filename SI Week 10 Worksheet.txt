@@ -1,0 +1,162 @@
+SI Week 10 Worksheet
+
+Warm-up:
+	Problem 1:
+		Write the for loop(s) that will traverse a 2D matrix in row-major order
+		(aka row by row). You don't have to write anything for the body of the
+		for loop(s), just the for loop(s).
+		
+	Problem 2:
+		Write the for loop(s) that will traverse a 2D matrix in column-major
+		order (aka column by column). You don't have to write anything for the
+		body of the for loop(s), just the for loop(s).
+		
+	Problem 3:
+		2D arrays can be jagged, meaning each row does not have the same number
+		of columns. For example, this is a jagged array:
+		
+			1 2 3 4
+			5 6
+			7 8 9
+			0 1 2 3 4 5
+			6 7 8 9
+		
+		Write the for loop(s) that will traverse a jagged array.
+		
+	Problem 4:
+		Assume you have a matrix that is rectangular, that is NxM or NxN. Write
+		three equivalent statements for the following statement.
+			
+			matrix[0].length
+			
+	Problem 5:
+		If an array is jagged, that is each row does not have the same number
+		of columns, is the following equal? ALWAYS, SOMETIMES, NEVER
+			
+			matrix[0].length == matrix[N].length
+
+Main Activity:
+	Problem 1:
+		Write a function called isLowerTriangular that takes in a 2D array 
+		called matrix and determines if matrix is lower triangular. The method
+		returns True if matrix is lower triangular, False otherwise. Do not
+		assume that matrix is square, or NxN.
+		
+		A NxN matrix is lower triangular if all values above the main diagonal
+		are 0. !!! A MATRIX MUST FIRST BE SQUARE IN ORDER TO BE LOWER
+		TRIANGULAR !!!
+		
+		For example,
+			---                     ---
+			| a00   0    0    0    0  |
+			| a10  a11   0    0    0  |
+			| a20  a21  a22   0    0  |
+			| a30  a31  a32  a33   0  |
+			| a40  a41  a42  a43  a44 |
+			---                     ---
+			
+	Problem 2:
+		Write a function called isUpperTriangular that takes in a 2D array
+		called matrix and determines if matrix is upper triangular. The method
+		returns Trus if matrix is upper triangular, False otherwise. Do not
+		assume that matrix is square, or NxN.
+		
+		A NxN matrix is upper triangular if all values below the main diagonal
+		are 0. !!! A MATRIX MUST FIRST BE SQUARE IN ORDER TO BE LOWER
+		TRIANGULAR !!! 
+		
+		For example,
+			---                     ---
+			| a00  a01  a02  a03  a04 |
+			|  0   a11  a12  a13  a14 |
+			|  0    0  a22   a23  a24 |
+			|  0    0    0   a33  a34 |
+			|  0    0    0    0   a44 |
+			---                     ---
+			
+	Problem 3:
+		Write a function called isStrictlyLower that takes in a 2D array called
+		matrix and determines if matrix is strictly lower triangular. The
+		method returns True if matrix is stricly lower triangular, False
+		otherwise. Do not assume that matrix is square, or NxN.
+		
+		A NxN matrix is stricly lower triangular if all values on and above the
+		main diagonal are 0. !!! A MATRIX CANNOT BE STRICLY LOWER TRIANGULAR IF
+		IT IS NOT FIRST LOWER TRIANGULAR. USE THIS TO YOUR ADVANTAGE !!!
+		
+		*** WRITE THIS FUNCTION IN A WAY THAT ELIMINATES REDUNDANCY. YOU CAN
+			ASSUME THAT isLowerTriangular() ALREADY EXISTS AND IS AVAILABLE TO
+			YOU TO USE ***
+		
+		For example,
+			---                     ---
+			|  0    0    0    0    0  |
+			| a10   0    0    0    0  |
+			| a20  a21   0    0    0  |
+			| a30  a31  a32   0    0  |
+			| a40  a41  a42  a43   0  |
+			---                     ---
+			
+	Problem 4:
+		Write a function called isStrictlyUpper that takes in a 2D array
+		called matrix and determines if matrix is strictly upper triangular.
+		The method returns Trus if matrix is strictly upper triangular, False 
+		otherwise. Do not assume that matrix is square, or NxN.
+		
+		A NxN matrix is strictly upper triangular if all values on and below the
+		main diagonal are 0. !!! A MATRIX CANNOT BE STRICLY UPPER TRIANGULAR IF
+		IT IS NOT FIRST UPPER TRIANGULAR. USE THIS TO YOUR ADVANTAGE !!!
+		
+		*** WRITE THIS FUNCTION IN A WAY THAT ELIMINATES REDUNDANCY. YOU CAN
+			ASSUME THAT isUpperTriangular() ALREADY EXISTS AND IS AVAILABLE TO
+			YOU TO USE ***
+		
+		For example,
+			---                     ---
+			|  0   a01  a02  a03  a04 |
+			|  0    0   a12  a13  a14 |
+			|  0    0    0   a23  a24 |
+			|  0    0    0    0   a34 |
+			|  0    0    0    0    0  |
+			---                     ---
+
+	Problem 5:
+		Write a function called isSymmetrical that takes in a 2D array called
+		matrix and determines if matrix is symmetrical around the main diagonal.
+		The method returns True if matrix is symmetrical, False otherwise. Do
+		not assume matrix is square, or NxN.
+		
+		For example, these matrices is symmetrical.
+			---       ---
+			|  1  2  3  |
+			|  2  2  0  |
+			|  3  0  3  |
+			---       ---
+			
+			---       ---
+			|  9  5  4  |
+			|  5  1  8  |
+			|  4  8  3  |
+			---       ---
+			
+	Problem 6:
+		Write a function called transposeMatrix that takes in a 2D array
+		called matrix and returns a transposed version of matrix.
+		
+		A transpose of a matrix is a matrix in which the original rows become 
+		the new columns. The matrix does not have to be square (aka NxN) to be
+		able to be transposed.
+		
+		For example, the original matrix is on the right and the transposed 
+		matrix is on the left.
+			---       ---			---       ---
+			|  1  2  3  |			|  1  4  7  |
+			|  4  5  6  |			|  2  5  8  |
+			|  7  8  9  |			|  3  6  9  |
+			---       ---			---       ---
+			
+			---    ---			---       ---
+			|  1  2  |			|  1  4  7  |
+			|  4  5  |			|  2  5  8  |
+			|  7  8  |			---       ---
+			---    ---
