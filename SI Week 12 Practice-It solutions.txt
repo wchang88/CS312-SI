@@ -1,0 +1,52 @@
+Practice-It Problems Solutions
+
+8.11: transactionFeeBankAccount
+	public boolean transactionFee(double amount) {
+		double totalFees = 0.0;
+		for (int i = 1; i <= transactions; i++) {
+			totalFees += i * amount;
+		}
+		balance = totalFees >= balance ? 0.0 : balance - totalFees;
+		
+		return balance != 0.0;    
+	}
+
+8.13: transferBankAccount
+	public void transfer(BankAccount dest, double amount) {
+		if (amount > 0 && balance >= 5.0) {
+			balance -= 5.0;
+			transactions++;
+			dest.transactions++;
+			
+			double toTransfer = amount > balance ? balance : amount;
+			balance -= toTransfer;
+			dest.balance += toTransfer;
+		}
+	}
+
+8.16: constructorLine
+	public Line(int x1, int y1, int x2, int y2) {
+		p1 = new Point(x1, y1);
+		p2 = new Point(x2, y2);
+	}
+	
+8.19: constructorRectangle
+	public Rectangle(Point p, int width, int height) {
+		this(p.getX(), p.getY(), width, height);
+	}
+
+8.20: containsRectangle
+	public boolean contains(int x, int y) {
+		return (x >= this.x && x <= (this.x + width)) 
+				&& (y >= this.y && y <= (this.y + height));
+	}
+
+	public boolean contains(Point p) {
+		return contains(p.getX(), p.getY());
+	}
+
+8.23: containsOtherRectangle
+	public boolean contains(Rectangle rect) {
+		return (rect.x >= x && (rect.x + rect.width) <= (x + width)) &&
+			(rect.y >= y && (rect.y + rect.height) <= (y + height));
+	}
